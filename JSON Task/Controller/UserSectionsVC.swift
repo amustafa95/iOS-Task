@@ -10,21 +10,39 @@ import UIKit
 
 class UserSectionsVC: UIViewController {
 
+    @IBOutlet weak var userTableView: UITableView!
+    
+    var indexSection: Int?
+    var users: [User] = [] 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        userTableView.delegate = self
+        userTableView.dataSource = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        userTableView.reloadData()
     }
-    */
+}
 
+extension UserSectionsVC: UITableViewDelegate, UITableViewDataSource{
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "sectionSelected",for: indexPath) as? UserByIdCell{
+            let user = users[indexPath.row]
+            cell.displayAllSection(for: user)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 99.95
+    }
+    
+    
 }

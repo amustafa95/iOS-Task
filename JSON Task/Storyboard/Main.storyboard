@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4A0-Eh-Zta">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main-->
+        <scene sceneID="TUH-dm-88r">
+            <objects>
+                <viewController id="4A0-Eh-Zta" customClass="Main" customModule="JSON_Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vku-MN-1Qb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="json-logo" translatesAutoresizingMaskIntoConstraints="NO" id="7zs-Jw-dRX">
+                                <rect key="frame" x="87" y="271" width="240" height="174"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="90s-Op-y0v"/>
+                                    <constraint firstAttribute="width" constant="240" id="npV-yd-cT2"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Mi-49-8pX" customClass="CustomeView" customModule="JSON_Task" customModuleProvider="target">
+                                <rect key="frame" x="20" y="436" width="374" height="358"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose How to Fetch Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrZ-gG-yff">
+                                        <rect key="frame" x="71" y="8" width="232" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="232" id="0yy-Wp-ytD"/>
+                                            <constraint firstAttribute="height" constant="22" id="XKa-hX-P9j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHK-Y9-DeH" customClass="CustomeBTN" customModule="JSON_Task" customModuleProvider="target">
+                                        <rect key="frame" x="46" y="224" width="282" height="45"/>
+                                        <color key="backgroundColor" red="0.86361896991729736" green="0.24280562996864319" blue="0.34175935387611389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="27"/>
+                                        <state key="normal" title="Fetch By User">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="P6N-B1-H3H" kind="show" id="FVt-n0-9yu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jda-JL-Mey" customClass="CustomeBTN" customModule="JSON_Task" customModuleProvider="target">
+                                        <rect key="frame" x="46" y="112" width="282" height="48"/>
+                                        <color key="backgroundColor" red="0.32310640811920166" green="0.70809370279312134" blue="0.74924421310424805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="ZOS-cB-Lev"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="27"/>
+                                        <state key="normal" title="Fetch By Id">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="POl-HJ-ima" kind="show" id="RxF-fS-Lzx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Jda-JL-Mey" firstAttribute="trailing" secondItem="PHK-Y9-DeH" secondAttribute="trailing" id="D6m-M1-S0X"/>
+                                    <constraint firstItem="FrZ-gG-yff" firstAttribute="centerX" secondItem="7Mi-49-8pX" secondAttribute="centerX" id="GuA-wk-Ob7"/>
+                                    <constraint firstItem="PHK-Y9-DeH" firstAttribute="top" secondItem="Jda-JL-Mey" secondAttribute="bottom" constant="64" id="NRp-Nj-Qkd"/>
+                                    <constraint firstItem="FrZ-gG-yff" firstAttribute="top" secondItem="7Mi-49-8pX" secondAttribute="top" constant="8" id="T8P-ki-wGH"/>
+                                    <constraint firstItem="Jda-JL-Mey" firstAttribute="leading" secondItem="PHK-Y9-DeH" secondAttribute="leading" id="gwg-l9-VNU"/>
+                                    <constraint firstItem="Jda-JL-Mey" firstAttribute="leading" secondItem="7Mi-49-8pX" secondAttribute="leading" constant="46" id="mca-ZS-hlW"/>
+                                    <constraint firstItem="Jda-JL-Mey" firstAttribute="centerX" secondItem="FrZ-gG-yff" secondAttribute="centerX" id="nIR-qV-J6J"/>
+                                    <constraint firstItem="Jda-JL-Mey" firstAttribute="top" secondItem="FrZ-gG-yff" secondAttribute="bottom" constant="82" id="uTQ-91-w4b"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Mi-49-8pX" firstAttribute="top" secondItem="n4P-Q4-O5s" secondAttribute="top" constant="392" id="D40-ld-bNN"/>
+                            <constraint firstItem="n4P-Q4-O5s" firstAttribute="bottom" secondItem="7Mi-49-8pX" secondAttribute="bottom" constant="68" id="UvZ-Op-K7I"/>
+                            <constraint firstItem="7Mi-49-8pX" firstAttribute="centerX" secondItem="7zs-Jw-dRX" secondAttribute="centerX" id="dml-Hy-5GT"/>
+                            <constraint firstItem="7zs-Jw-dRX" firstAttribute="centerX" secondItem="vku-MN-1Qb" secondAttribute="centerX" id="ihl-KE-D55"/>
+                            <constraint firstItem="7Mi-49-8pX" firstAttribute="leading" secondItem="vku-MN-1Qb" secondAttribute="leadingMargin" id="uqr-P3-4sc"/>
+                            <constraint firstItem="7zs-Jw-dRX" firstAttribute="centerY" secondItem="vku-MN-1Qb" secondAttribute="centerY" constant="-90" id="vZb-Wl-MwP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n4P-Q4-O5s"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FiN-I9-LyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="80.357142857142847"/>
+        </scene>
+        <!--fetchById-->
+        <scene sceneID="Bqo-VW-O5f">
+            <objects>
+                <viewControllerPlaceholder storyboardName="fetchById" id="POl-HJ-ima" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hh6-uS-f9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="-109"/>
+        </scene>
+        <!--fetchBySection-->
+        <scene sceneID="udF-cJ-SWX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="fetchBySection" id="P6N-B1-H3H" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVC-g9-fzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="json-logo" width="690" height="330"/>
+    </resources>
+</document>

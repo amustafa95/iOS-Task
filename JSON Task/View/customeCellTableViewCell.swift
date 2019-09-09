@@ -9,16 +9,13 @@
 import UIKit
 
 class customeCellTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+  
+    @IBOutlet weak var lblId: UILabel!
+  //  @IBOutlet weak var lblTitle: UILabel!
+    
+    // MARK: - Access Control the data
+    func dataModel(forModel data: User){
+        lblId.text = "ID Number: \(data.id)"
+     //   lblTitle.text = data.title
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
