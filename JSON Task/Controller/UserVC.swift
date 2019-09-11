@@ -7,24 +7,30 @@
 //
 
 import UIKit
+protocol BackgroundDelegate {
+    func changeBackgroundColor(withColor color: UIColor)
+}
+
 
 class UserVC: UIViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblBody: UILabel!
     
+    var delegate: BackgroundDelegate?
     var userTitle: String?
     var userBody: String?
+    var randomColor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         lblTitle.text = userTitle
         lblBody.text = userBody
-        
+        randomColor = UIColor.red
     }
     
-//    func dataModel(with data: User){
-//        lblTitle.text = data.title
-//        lblBody.text = data.body
-//    }
+    @IBAction func randomColorBTN(_ sender: UIButton){
+        delegate?.changeBackgroundColor(withColor: .red)
+        navigationController?.popToRootViewController(animated: true)
+    }
 }

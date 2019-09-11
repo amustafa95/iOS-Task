@@ -11,16 +11,16 @@ import UIKit
 class MainUserVC: UIViewController {
     @IBOutlet weak var sectionTableView: UITableView!
     
-    var users: [User] = [] {
+    var users: [Post] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.sectionTableView.reloadData()
             }
         }
     }
-    var userBySectionNumber = [(key: Int, value: [User])]()
-    var userById = [User]()
-    var user = [User]()
+    var userBySectionNumber = [(key: Int, value: [Post])]()
+    var userById = [Post]()
+    var user = [Post]()
     var selectedTilteById: [String?] = []
     var selectedBodyById: [String?] = []
     var indexSections: Int?
@@ -51,7 +51,7 @@ extension MainUserVC: UITableViewDelegate,UITableViewDataSource {
     //            return 1
     //        }
     // MARK: Load data to the user
-    func load(with users: [User]){
+    func load(with users: [Post]){
         DispatchQueue.main.async {
             self.userBySectionNumber = Dictionary(grouping: users, by: { user in
                 user.userId }).sorted(by: { $0.0 < $1.0})
@@ -112,7 +112,7 @@ extension MainUserVC {
             in
             guard let data = data else {return}
             do{
-                let userFetch = try JSONDecoder().decode([User].self, from: data)  // decode * ( Codable )
+                let userFetch = try JSONDecoder().decode([Post].self, from: data)  // decode * ( Codable )
                 self.users = userFetch
                 self.load(with: userFetch)
                 self.user = userFetch

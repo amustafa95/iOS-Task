@@ -11,14 +11,15 @@ import UIKit
 class UserByIdVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var users: [User] = [] {
+    var users: [Post] = [] {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
-    var userBySectionNumber = [(key: Int, value: [User])]()
-    var userById = [(key: Int, value: [User])]()
+    var userBySectionNumber = [(key: Int, value: [Post])]()
+    var userById = [(key: Int, value: [Post])]()
     
     var selectedTilteById: String?
     var selectedBodyById: String?
@@ -26,8 +27,8 @@ class UserByIdVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        
     }
-    
     // MARK: - ConfigureView
     private func configureView() {
         tableView.delegate = self
@@ -43,26 +44,18 @@ class UserByIdVC: UIViewController {
 
 //MARK: Delegate & Data srouce
 extension UserByIdVC: UITableViewDelegate,UITableViewDataSource {
-    
-//        private func numberOfUsers(in users: [User]) -> Int {
-//            userById = Dictionary(grouping: users, by: {users in users.self})
-//            return 1
-//        }
     // MARK: Load data to the user
-     func load(with users: [User]) -> Void{
+     func load(with users: [Post]) -> Void{
         userBySectionNumber = Dictionary(grouping: users, by: { user in
-            user.userId ?? 0 }).sorted(by: { $0.0 < $1.0})
+            user.userId}).sorted(by: { $0.0 < $1.0})
         print(userBySectionNumber)
-//        userById = Dictionary(grouping: users, by: { user in
-//            user.id ?? 0 }).sorted(by: { $0.0 < $1.0})
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            // proccessing .
-        print(userBySectionNumber)
         return userBySectionNumber.count
-            
         }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,7 +63,6 @@ extension UserByIdVC: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return "Section Number \(userBySectionNumber[section].key)"
     }
     
@@ -99,6 +91,7 @@ extension UserByIdVC: UITableViewDelegate,UITableViewDataSource {
     // MARK: - Prepare for Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextViewController = segue.destination as? UserVC {
+            nextViewController.delegate = self
             nextViewController.userBody = selectedBodyById
             nextViewController.userTitle = selectedTilteById
         }
@@ -106,7 +99,7 @@ extension UserByIdVC: UITableViewDelegate,UITableViewDataSource {
     
     
     
-    func printValue(with value: User) -> Void{
+    func printValue(with value: Post) -> Void{
         selectedTilteById = value.title
         selectedBodyById = value.body
     }
@@ -121,7 +114,7 @@ extension UserByIdVC {
             in
             guard let data = data else {return}
             do{
-                let userFetch = try JSONDecoder().decode([User].self, from: data)  // decode * ( Codable )
+                let userFetch = try JSONDecoder().decode([Post].self, from: data)  // decode * ( Codable )
                 self.users = userFetch
                 self.load(with: userFetch)
             } catch{
@@ -130,4 +123,11 @@ extension UserByIdVC {
             }.resume()
     }
     
+}
+
+// MARK: - Change View Color
+extension UserByIdVC: BackgroundDelegate{
+    func changeBackgroundColor(withColor color: UIColor) {
+        view.backgroundColor = color
+    }
 }

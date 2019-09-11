@@ -16,13 +16,12 @@ class UserByIdCell: UITableViewCell {
     @IBOutlet weak var lblBody: UILabel!
     
     // MARK: - Access Control the data
-    func dataModel(forModel data: User){
+    func dataModel(forModel data: Post){
         lblUser.text = "Section Number: \(data.userId)"
-       // lblTitle.text = data.title
     }
     
     // MARK: - Display all section attributes
-    func displayAllSection(for data: User){
+    func displayAllSection(for data: Post){
         lblId.text = "ID: \(data.id)"
         lblTitle.text = data.title
         lblBody.text = data.title

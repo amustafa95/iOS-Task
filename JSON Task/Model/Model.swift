@@ -8,13 +8,9 @@
 
 import Foundation
 
-struct User: Codable {
+struct Post: Codable {
     var userId: Int
     var id: Int
     var title: String
     var body: String
-//
-//    enum codingKeys: String, CodingKey {
-//        case userID = "userId" //userId
-//    }
 }

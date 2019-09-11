@@ -9,13 +9,10 @@
 import UIKit
 
 class customeCellTableViewCell: UITableViewCell {
-  
     @IBOutlet weak var lblId: UILabel!
-  //  @IBOutlet weak var lblTitle: UILabel!
     
     // MARK: - Access Control the data
-    func dataModel(forModel data: User){
+    func dataModel(forModel data: Post){
         lblId.text = "ID Number: \(data.id)"
-     //   lblTitle.text = data.title
     }
 }

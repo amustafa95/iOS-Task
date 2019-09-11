@@ -13,7 +13,7 @@ class UserSectionsVC: UIViewController {
     @IBOutlet weak var userTableView: UITableView!
     
     var indexSection: Int?
-    var users: [User] = [] 
+    var users: [Post] = [] 
     override func viewDidLoad() {
         super.viewDidLoad()
         userTableView.delegate = self
@@ -43,6 +43,4 @@ extension UserSectionsVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 99.95
     }
-    
-    
 }
