@@ -46,7 +46,7 @@
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="POl-HJ-ima" kind="show" id="9VN-vW-GbA"/>
+                                            <segue destination="P6N-B1-H3H" kind="show" id="2JI-eF-bfa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jda-JL-Mey" customClass="CustomeBTN" customModule="JSON_Task" customModuleProvider="target">
@@ -60,7 +60,7 @@
                                             <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="P6N-B1-H3H" kind="show" id="9rD-iR-Ftt"/>
+                                            <segue destination="POl-HJ-ima" kind="show" id="VsR-tL-mPZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
