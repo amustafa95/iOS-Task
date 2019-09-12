@@ -123,6 +123,7 @@ extension UserByIdVC: UICollectionViewDelegate, UICollectionViewDataSource{
             let user = userCollection[indexPath.row]
             print(user)
             cell.configure(with: user)
+            return cell
         }
         return UICollectionViewCell()
     }
