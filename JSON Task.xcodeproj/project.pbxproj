@@ -16,6 +16,7 @@
 		E04D597A2320FAF000B32EA3 /* customeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04D59792320FAF000B32EA3 /* customeCellTableViewCell.swift */; };
 		E070BADC23267CA3003AA424 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E070BADB23267CA3003AA424 /* Main.storyboard */; };
 		E070BAE0232684AD003AA424 /* CustomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070BADF232684AD003AA424 /* CustomeView.swift */; };
+		E0A7ED32232A383B00E8072D /* CustomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7ED31232A383B00E8072D /* CustomeCollectionCell.swift */; };
 		E0E16D7D2324FD8E00231A89 /* UserByIdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E16D7C2324FD8E00231A89 /* UserByIdCell.swift */; };
 		E0E16D802325378B00231A89 /* fetchBySection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E16D7F2325378B00231A89 /* fetchBySection.storyboard */; };
 		E0E16D82232537F500231A89 /* MainUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E16D81232537F500231A89 /* MainUserVC.swift */; };
@@ -35,6 +36,7 @@
 		E04D59792320FAF000B32EA3 /* customeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customeCellTableViewCell.swift; sourceTree = "<group>"; };
 		E070BADB23267CA3003AA424 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E070BADF232684AD003AA424 /* CustomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeView.swift; sourceTree = "<group>"; };
+		E0A7ED31232A383B00E8072D /* CustomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCollectionCell.swift; sourceTree = "<group>"; };
 		E0E16D7C2324FD8E00231A89 /* UserByIdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserByIdCell.swift; sourceTree = "<group>"; };
 		E0E16D7F2325378B00231A89 /* fetchBySection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = fetchBySection.storyboard; sourceTree = "<group>"; };
 		E0E16D81232537F500231A89 /* MainUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUserVC.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				E04D59792320FAF000B32EA3 /* customeCellTableViewCell.swift */,
+				E0A7ED31232A383B00E8072D /* CustomeCollectionCell.swift */,
 				E0E16D7C2324FD8E00231A89 /* UserByIdCell.swift */,
 				E070BADF232684AD003AA424 /* CustomeView.swift */,
 			);
@@ -198,6 +201,7 @@
 			files = (
 				E0E16D7D2324FD8E00231A89 /* UserByIdCell.swift in Sources */,
 				E04D597A2320FAF000B32EA3 /* customeCellTableViewCell.swift in Sources */,
+				E0A7ED32232A383B00E8072D /* CustomeCollectionCell.swift in Sources */,
 				E0E7988C2323FDEC00C2F923 /* UserVC.swift in Sources */,
 				E024C832231FEB690088A46E /* Model.swift in Sources */,
 				E0E16D82232537F500231A89 /* MainUserVC.swift in Sources */,
